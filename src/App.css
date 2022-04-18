@@ -1,0 +1,64 @@
+
+path{
+    fill: white;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.data-panel{
+    text-align: center;
+}
+.wind-panel{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    background: rgba(2, 0, 82, 0.47);
+    border-radius: 25px;
+    padding: 10px;
+    color: white;
+}
+.wind-data-panel{
+    display: flex;
+    justify-content: space-evenly;
+    width: 80vw;
+}
+
+.humidity-feeling-panel{
+    display: flex;
+    margin: 20px;
+    padding: 10px;
+    width: 100vw;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.humidity-panel{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
+    width: 33vw;
+    background: rgba(2, 0, 82, 0.47);
+    border-radius: 25px;
+}
+
+.feeling-panel{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
+    width: 33vw;
+    background: rgba(2, 0, 82, 0.47);
+    border-radius: 25px;
+}
