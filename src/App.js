@@ -15,7 +15,7 @@ function App() {
 
   useEffect(() => {
     async function getData() {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/weather?lat=8&lon=-80&appid=${process.env.REACT_APP_API_KEY}`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/weather?lat=8&lon=-80&appid=${process.env.REACT_APP_API_KEY}&units=metric`);
       const data = await response.json();
       setData(data);
       
@@ -88,7 +88,7 @@ function App() {
       <div className='data-panel'>
         {getImage(data)}
         <p>{data.weather[0]?.description}</p>
-        <p className='temp-text'>{(typeof data.main.temp != 'undefined') ? (((data.main.temp - 32)* 5)/9).toFixed(0) + ' °C' : 'No data'}</p>
+        <p className='temp-text'>{(data.main.temp).toFixed(0) + ' °C'}</p>
       </div>
 
       <div className='wind-panel'>
@@ -131,7 +131,7 @@ function App() {
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M15 13V5C15 3.34 13.66 2 12 2C10.34 2 9 3.34 9 5V13C7.79 13.91 7 15.37 7 17C7 19.76 9.24 22 12 22C14.76 22 17 19.76 17 17C17 15.37 16.21 13.91 15 13ZM11 5C11 4.45 11.45 4 12 4C12.55 4 13 4.45 13 5H12V6H13V8H12V9H13V11H11V5Z" fill="black"/>
           </svg>
-          <p className='feeling-text'>{(typeof data.main.feels_like != 'undefined') ? (((data.main.feels_like - 32)* 5)/9).toFixed(0) + ' °C' : 'No data'}</p>
+          <p className='feeling-text'>{(data.main.feels_like).toFixed(0) + ' °C'}</p>
         </div>
       </div>
       
