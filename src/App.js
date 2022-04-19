@@ -11,11 +11,29 @@ import './App.css';
 function App() {
 
   const [data, setData] = useState([]);
+  const [lat, getLat] = useState(0);
+  const [lon, getLon] = useState(0);
   const [direction, setDirections] = useState('');
 
   useEffect(() => {
+
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else { 
+        console.log("Geolocation is not supported by this browser.");
+      }
+    }
+
+    function showPosition(position) {
+      getLat(position.coords.latitude);
+      getLon(position.coords.longitude);
+    }
+
     async function getData() {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/weather?lat=8&lon=-80&appid=${process.env.REACT_APP_API_KEY}&units=metric`);
+      
+
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_API_KEY}&units=metric`);
       const data = await response.json();
       setData(data);
       
@@ -61,7 +79,7 @@ function App() {
       }
     }
 
-    
+    getLocation();
     getData();
     getDirection(data);
     
