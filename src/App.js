@@ -1,5 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import sun from './resources/images/icons8-sol-512.png';
+import sun from './resources/images/amanecer.png';
+import clouds from './resources/images/nube.png';
+import rain from './resources/images/lluvia.png'
+import snow from './resources/images/invierno.png'
+import thunderstorm from './resources/images/tormenta.png'
 import './App.css';
 
 
@@ -56,16 +60,33 @@ function App() {
         return 'No data'
       }
     }
+
+    
     getData();
     getDirection(data);
-  }, [])
+    
+  }, []);
+
+  function getImage (data){
+    if(data.weather[0].main === 'Clear'){
+      return <img src={sun}></img>;
+    }else if(data.weather[0].main === 'Clouds'){
+      return <img src={clouds}></img>;
+    }else if(data.weather[0].main === 'Rain'){
+      return <img src={rain}></img>;
+    }else if(data.weather[0].main === 'Snow'){
+      return <img src={snow}></img>;
+    }else if(data.weather[0].main === 'Thunderstorm'){
+      return <img src={thunderstorm}></img>;
+    }
+  }
   
   return (
     
      <div className='container'>
       <h1>{data.sys.country + ', ' + data.name}</h1>
       <div className='data-panel'>
-        <label>{data.weather[0]?.main}</label>
+        {getImage(data)}
         <p>{data.weather[0]?.description}</p>
         <p className='temp-text'>{(typeof data.main.temp != 'undefined') ? (((data.main.temp - 32)* 5)/9).toFixed(0) + ' °C' : 'No data'}</p>
       </div>

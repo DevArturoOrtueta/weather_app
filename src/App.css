@@ -32,10 +32,10 @@ path{
 
 .humidity-feeling-panel{
     display: flex;
-    margin: 20px;
+    margin: 10px;
     padding: 10px;
-    width: 100vw;
-    justify-content: space-evenly;
+    width: 80vw;
+    justify-content: space-between;
     color: white;
 }
 
@@ -61,4 +61,13 @@ path{
     width: 33vw;
     background: rgba(2, 0, 82, 0.47);
     border-radius: 25px;
+}
+
+img{
+    width: 50%;
+}
+
+.temp-text{
+    font-size: 50px;
+    font-weight: bold;
 }
