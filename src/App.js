@@ -11,6 +11,7 @@ function App() {
   const [lon, getLon] = useState(0);
   const [direction, setDirections] = useState('');
   const [loading, setLoading] = useState(false);
+  const [image, setImage] = useState('');
   
     function getLocation() {
       if (navigator.geolocation) {
@@ -77,33 +78,35 @@ function App() {
       }
     }
 
+    async function getImage (data){
+      if(data.weather[0].main === 'Clear'){
+        setImage(`../assets/images/icons8-sol-512.png`);
+      }else if(data.weather[0].main === 'Clouds'){
+        setImage(`../assets/images/nube.png`);
+      }else if(data.weather[0].main === 'Rain'){
+        setImage(`../assets/images/lluvia.png`);
+      }else if(data.weather[0].main === 'Snow'){
+        setImage(`../assets/images/invierno.png`);
+      }else if(data.weather[0].main === 'Thunderstorm'){
+        setImage(`../assets/images/tormenta.png`);
+      }
+    }
+
     
     getLocation();
     getData();
     getDirection(data);
+    getImage(data);
     
   }, [loading]);
 
-  async function getImage (data){
-      if(data.weather[0].main === 'Clear'){
-        return <img src={`../assets/images/icons8-sol-512.png`}></img>;
-      }else if(data.weather[0].main === 'Clouds'){
-        return <img src={`../assets/images/nube.png`}></img>;
-      }else if(data.weather[0].main === 'Rain'){
-        return <img src={`../assets/images/lluvia.png`}></img>;
-      }else if(data.weather[0].main === 'Snow'){
-        return <img src={`../assets/images/invierno.png`}></img>;
-      }else if(data.weather[0].main === 'Thunderstorm'){
-        return <img src={`../assets/images/tormenta.png`}></img>;
-      }
-    }
-
+  
   const BodyItem = () => {
     return (
       <div className='container'>
       <h1>{data.sys.country + ', ' + data.name}</h1>
       <div className='data-panel'>
-        {getImage(data)}
+        <img src={image} alt="Image"></img>
         <p>{data.weather[0]?.description}</p>
         <p className='temp-text'>{(data.main.temp).toFixed(0) + ' °C'}</p>
       </div>
