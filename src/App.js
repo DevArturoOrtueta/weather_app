@@ -4,6 +4,7 @@ import clouds from './resources/images/nube.png';
 import rain from './resources/images/lluvia.png'
 import snow from './resources/images/invierno.png'
 import thunderstorm from './resources/images/tormenta.png'
+import mundoload from './resources/images/alrededor-del-mundo.gif';
 import './App.css';
 
 
@@ -14,9 +15,8 @@ function App() {
   const [lat, getLat] = useState(0);
   const [lon, getLon] = useState(0);
   const [direction, setDirections] = useState('');
-
-  useEffect(() => {
-
+  const [loading, setLoading] = useState(false);
+  
     function getLocation() {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
@@ -29,14 +29,17 @@ function App() {
       getLat(position.coords.latitude);
       getLon(position.coords.longitude);
     }
+    
+  useEffect(() => {
+
+    
 
     async function getData() {
       
-
       const response = await fetch(`${process.env.REACT_APP_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_API_KEY}&units=metric`);
       const data = await response.json();
       setData(data);
-      
+      setLoading(true);
       console.log(data);
     }
 
@@ -83,7 +86,7 @@ function App() {
     getData();
     getDirection(data);
     
-  }, []);
+  }, [loading]);
 
   function getImage (data){
     if(data.weather[0].main === 'Clear'){
@@ -98,10 +101,10 @@ function App() {
       return <img src={thunderstorm}></img>;
     }
   }
-  
-  return (
-    
-     <div className='container'>
+
+  const BodyItem = () => {
+    return (
+      <div className='container'>
       <h1>{data.sys.country + ', ' + data.name}</h1>
       <div className='data-panel'>
         {getImage(data)}
@@ -152,9 +155,17 @@ function App() {
           <p className='feeling-text'>{(data.main.feels_like).toFixed(0) + ' °C'}</p>
         </div>
       </div>
-      
-     </div>
-    
+      </div>
+     
+    )
+  }
+
+  
+  
+  return (
+    <div>
+     {loading ? <BodyItem /> : <div className='div-loading'> <img src={mundoload}></img></div>}
+    </div>
   );
 }
 
