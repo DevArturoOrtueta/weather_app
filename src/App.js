@@ -90,11 +90,11 @@ function App() {
 
   function getImage (data){
     if(data.weather[0].main === 'Clear'){
-      return <img src={sun}></img>;
+      return <img src={require('./resources/images/amanecer.png')}></img>;
     }else if(data.weather[0].main === 'Clouds'){
       return <img src={clouds}></img>;
     }else if(data.weather[0].main === 'Rain'){
-      return <img src={rain}></img>;
+      return <img src={require('./resources/images/lluvia.png')}></img>;
     }else if(data.weather[0].main === 'Snow'){
       return <img src={snow}></img>;
     }else if(data.weather[0].main === 'Thunderstorm'){
@@ -164,7 +164,7 @@ function App() {
   
   return (
     <div>
-     {loading ? <BodyItem /> : <div className='div-loading'> <img src={mundoload}></img></div>}
+     {loading ? <BodyItem /> : <div className='div-loading'> <img src={require('./resources/images/alrededor-del-mundo.gif')}></img></div>}
     </div>
   );
 }

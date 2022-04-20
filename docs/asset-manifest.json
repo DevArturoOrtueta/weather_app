@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/static/css/main.739aca3c.css",
-    "main.js": "/static/js/main.c1f9cc42.js",
+    "main.js": "/static/js/main.df9dd3c3.js",
     "static/js/787.d9312eb8.chunk.js": "/static/js/787.d9312eb8.chunk.js",
-    "static/media/alrededor-del-mundo.gif": "./static/media/alrededor-del-mundo.e4573371488574214ec3.gif",
-    "static/media/invierno.png": "./static/media/invierno.c089e0fd14545d5a4338.png",
-    "static/media/lluvia.png": "./static/media/lluvia.37d7d933e626b147688e.png",
-    "static/media/nube.png": "./static/media/nube.f4625c72ea48eb7620bc.png",
-    "static/media/tormenta.png": "./static/media/tormenta.abea6aa30bc66915560e.png",
-    "static/media/amanecer.png": "./static/media/amanecer.3f0a51f8a250b60c0cc8.png",
+    "static/media/alrededor-del-mundo.gif": "/static/media/alrededor-del-mundo.e4573371488574214ec3.gif",
+    "static/media/invierno.png": "/static/media/invierno.c089e0fd14545d5a4338.png",
+    "static/media/lluvia.png": "/static/media/lluvia.37d7d933e626b147688e.png",
+    "static/media/nube.png": "/static/media/nube.f4625c72ea48eb7620bc.png",
+    "static/media/tormenta.png": "/static/media/tormenta.abea6aa30bc66915560e.png",
+    "static/media/amanecer.png": "/static/media/amanecer.3f0a51f8a250b60c0cc8.png",
     "index.html": "/index.html",
     "main.739aca3c.css.map": "/static/css/main.739aca3c.css.map",
-    "main.c1f9cc42.js.map": "/static/js/main.c1f9cc42.js.map",
+    "main.df9dd3c3.js.map": "/static/js/main.df9dd3c3.js.map",
     "787.d9312eb8.chunk.js.map": "/static/js/787.d9312eb8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.739aca3c.css",
-    "static/js/main.c1f9cc42.js"
+    "static/js/main.df9dd3c3.js"
   ]
 }
