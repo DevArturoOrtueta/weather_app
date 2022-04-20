@@ -106,7 +106,7 @@ function App() {
       <div className='container'>
       <h1>{data.sys.country + ', ' + data.name}</h1>
       <div className='data-panel'>
-        <img src={image} alt="Image"></img>
+        <img src={`http://openweathermap.org/img/w/`+ data.weather[0].icon + ".png"} alt="Image"></img>
         <p>{data.weather[0]?.description}</p>
         <p className='temp-text'>{(data.main.temp).toFixed(0) + ' °C'}</p>
       </div>
