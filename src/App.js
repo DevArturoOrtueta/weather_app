@@ -77,25 +77,26 @@ function App() {
       }
     }
 
+    
     getLocation();
     getData();
     getDirection(data);
     
   }, [loading]);
 
-  function getImage (data){
-    if(data.weather[0].main === 'Clear'){
-      return <img src={`../assets/images/icons8-sol-512.png`}></img>;
-    }else if(data.weather[0].main === 'Clouds'){
-      return <img src={`../assets/images/nube.png`}></img>;
-    }else if(data.weather[0].main === 'Rain'){
-      return <img src={`../assets/images/lluvia.png`}></img>;
-    }else if(data.weather[0].main === 'Snow'){
-      return <img src={`../assets/images/invierno.png`}></img>;
-    }else if(data.weather[0].main === 'Thunderstorm'){
-      return <img src={`../assets/images/tormenta.png`}></img>;
+  async function getImage (data){
+      if(data.weather[0].main === 'Clear'){
+        return <img src={`../assets/images/icons8-sol-512.png`}></img>;
+      }else if(data.weather[0].main === 'Clouds'){
+        return <img src={`../assets/images/nube.png`}></img>;
+      }else if(data.weather[0].main === 'Rain'){
+        return <img src={`../assets/images/lluvia.png`}></img>;
+      }else if(data.weather[0].main === 'Snow'){
+        return <img src={`../assets/images/invierno.png`}></img>;
+      }else if(data.weather[0].main === 'Thunderstorm'){
+        return <img src={`../assets/images/tormenta.png`}></img>;
+      }
     }
-  }
 
   const BodyItem = () => {
     return (
