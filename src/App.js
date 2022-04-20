@@ -1,10 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import sun from './resources/images/amanecer.png';
-import clouds from './resources/images/nube.png';
-import rain from './resources/images/lluvia.png'
-import snow from './resources/images/invierno.png'
-import thunderstorm from './resources/images/tormenta.png'
-import mundoload from './resources/images/alrededor-del-mundo.gif';
+
 import './App.css';
 
 
@@ -90,15 +85,15 @@ function App() {
 
   function getImage (data){
     if(data.weather[0].main === 'Clear'){
-      return <img src={require('./resources/images/amanecer.png')}></img>;
+      return <img src={`../assets/images/icons8-sol-512.png`}></img>;
     }else if(data.weather[0].main === 'Clouds'){
-      return <img src={clouds}></img>;
+      return <img src={`../assets/images/nube.png`}></img>;
     }else if(data.weather[0].main === 'Rain'){
-      return <img src={require('./resources/images/lluvia.png')}></img>;
+      return <img src={`../assets/images/lluvia.png`}></img>;
     }else if(data.weather[0].main === 'Snow'){
-      return <img src={snow}></img>;
+      return <img src={`../assets/images/invierno.png`}></img>;
     }else if(data.weather[0].main === 'Thunderstorm'){
-      return <img src={thunderstorm}></img>;
+      return <img src={`../assets/images/tormenta.png`}></img>;
     }
   }
 
@@ -164,7 +159,7 @@ function App() {
   
   return (
     <div>
-     {loading ? <BodyItem /> : <div className='div-loading'> <img src={require('./resources/images/alrededor-del-mundo.gif')}></img></div>}
+     {loading ? <BodyItem /> : <div className='div-loading'> <img src={`../assets/images/alrededor-del-mundo.gif`}></img></div>}
     </div>
   );
 }
