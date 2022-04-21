@@ -1,0 +1,182 @@
+#root{
+    background: linear-gradient(180deg, #B3E9FA 0%, #FFFFFF 100%);
+    
+}
+
+svg{
+    fill: black;
+}
+
+    
+
+/* Desktop View*/
+@media screen and (min-width: 1000px){
+    
+    .panel-owner{
+        width: 30%;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        gap: 5%;
+        padding: 5%;
+    }
+    .div-temp-main{
+        position: relative;
+        background: linear-gradient(234.16deg, rgba(182, 182, 182, 0.32) 2.85%, rgba(255, 255, 255, 0.32) 100%);
+        box-shadow: 3px 4px 26px rgba(0, 0, 0, 0.25);
+        border-radius: 21px;
+        width: 40%;
+        max-height: 500px;
+        padding: 30px;
+    }
+
+    .div-temp-main img{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 150px;
+
+    }
+
+    .wind-panel{
+        fill: black;
+        color: black;
+        background: linear-gradient(234.16deg, rgba(182, 182, 182, 0.32) 2.85%, rgba(255, 255, 255, 0.32) 100%);
+        box-shadow: 3px 4px 26px rgba(0, 0, 0, 0.25);
+        border-radius: 21px;
+        text-align: center;
+        
+        display: flex;
+        justify-content: space-evenly;
+        gap: 5%;
+        margin: 5%;
+
+    }
+
+    .wind-panel label{
+        font-weight: 500;
+        font-size: 24px;
+    }
+
+    .wind-data-panel{
+        display: flex;
+        flex-direction: row;
+        margin: 5%;
+        justify-content: space-evenly;
+        display: flex;
+        justify-content: space-evenly;
+        gap: 5%;
+        margin: 5%;
+    }
+
+    .panel{
+        display: flex;
+        flex-direction: column;
+        padding: 5%;
+        gap: 5%;
+    }
+
+    .temp-text{
+        font-size: 96px;
+        font-weight: 100;
+    }
+
+    .temp-description-text{
+        font-size: 36px;
+        font-weight: 100;
+        line-height: 3;
+    }
+
+    .div-temp-main div h1{
+        font-size: 2.7rem;
+    }
+}
+
+/*Mobile View*/
+@media screen and (max-width: 999px) and (min-width: 322px){
+    
+    .panel-owner{
+        width: 95%;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 5%;
+        padding: 5%;
+    }
+    .div-temp-main{
+        position: relative;
+        background: linear-gradient(234.16deg, rgba(182, 182, 182, 0.32) 2.85%, rgba(255, 255, 255, 0.32) 100%);
+        box-shadow: 3px 4px 26px rgba(0, 0, 0, 0.25);
+        border-radius: 21px;
+        width: 80%;
+        max-height: 500px;
+        padding: 30px;
+    }
+
+    .div-temp-main img{
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 100px;
+
+    }
+
+    .wind-panel{
+        fill: black;
+        color: black;
+        background: linear-gradient(234.16deg, rgba(182, 182, 182, 0.32) 2.85%, rgba(255, 255, 255, 0.32) 100%);
+        box-shadow: 3px 4px 26px rgba(0, 0, 0, 0.25);
+        border-radius: 21px;
+        text-align: center;
+        
+        display: flex;
+        justify-content: space-evenly;
+        gap: 5%;
+        margin: 5%;
+
+    }
+
+    .wind-panel label{
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+    .wind-data-panel{
+        display: flex;
+        flex-direction: row;
+        margin: 5%;
+        justify-content: space-evenly;
+        display: flex;
+        justify-content: space-evenly;
+        gap: 5%;
+        margin: 5%;
+    }
+
+    .panel{
+        display: flex;
+        flex-direction: column;
+        padding: 5%;
+        gap: 5%;
+    }
+
+    .temp-text{
+        font-size: 96px;
+        font-weight: 100;
+    }
+
+    .temp-description-text{
+        font-size: 24px;
+        font-weight: 100;
+        line-height: 3;
+    }
+
+    .div-temp-main div h1{
+        font-size: 1.5rem;
+    }
+}
