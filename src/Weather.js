@@ -95,7 +95,7 @@ function Weather() {
           <div>
             <h1>{data.sys.country + ', ' + data.name}</h1>
           </div>
-          <img src={`http://openweathermap.org/img/w/`+ data.weather[0].icon + ".png"} alt="Image"></img>
+          <img src={`http://openweathermap.org/img/wn/`+ data.weather[0].icon + "@2x.png"} alt="Image"></img>
           <div>
             <p className='temp-description-text'>{data.weather[0]?.description}</p>
           </div>
