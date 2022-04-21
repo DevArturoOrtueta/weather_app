@@ -95,6 +95,7 @@ svg{
     }
 }
 
+/*Mobile View*/
 @media screen and (max-width: 999px) and (min-width: 322px){
     
     .panel-owner{
