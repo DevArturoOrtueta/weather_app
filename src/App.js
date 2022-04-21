@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
-import './App.css';
+
 
 
 
@@ -11,7 +11,7 @@ function App() {
   const [lon, getLon] = useState(0);
   const [direction, setDirections] = useState('');
   const [loading, setLoading] = useState(false);
-  const [image, setImage] = useState('');
+  
   
     function getLocation() {
       if (navigator.geolocation) {
@@ -78,25 +78,12 @@ function App() {
       }
     }
 
-    async function getImage (data){
-      if(data.weather[0].main === 'Clear'){
-        setImage(`../assets/images/icons8-sol-512.png`);
-      }else if(data.weather[0].main === 'Clouds'){
-        setImage(`../assets/images/nube.png`);
-      }else if(data.weather[0].main === 'Rain'){
-        setImage(`../assets/images/lluvia.png`);
-      }else if(data.weather[0].main === 'Snow'){
-        setImage(`../assets/images/invierno.png`);
-      }else if(data.weather[0].main === 'Thunderstorm'){
-        setImage(`../assets/images/tormenta.png`);
-      }
-    }
+    
 
     
     getLocation();
     getData();
     getDirection(data);
-    getImage(data);
     
   }, [loading]);
 
